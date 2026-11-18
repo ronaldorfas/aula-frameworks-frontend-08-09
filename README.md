@@ -1156,11 +1156,11 @@ As duas aulas podem ser entendidas como etapas complementares na construção da
 **Integrantes:**  
 `Ronaldo Soares`
 
-**Repositório GitHub:**  
-`https://github.com/ronaldorfas/projeto-react`
+**Repositório GitHub:**
+https://github.com/ronaldorfas/projeto-react
 
-**Link da aplicação publicada (se houver):**  
-`https://provincia-de-sao-pedro.vercel.app/`
+**Link da aplicação publicada:** 
+https://provincia-de-sao-pedro.vercel.app/
 
 ## 2. Descrição
 

@@ -1098,28 +1098,31 @@ Desenvolver uma aplicação React que utilize todos os conceitos estudados na au
 
 ### 📌 Registro da atividade
 
-**Ideia da aplicação:**
+(https://github.com/ronaldorfas/projeto-react/blob/main/provincia-de-sao-pedro/README.md)
 
 > Escreva aqui a ideia escolhida.
 
+
+---
+
 **Funcionalidades planejadas:**
 
-- [ ] 
-- [ ] 
-- [ ] 
+- [x] Explorar destinos turísticos do Rio Grande do Sul
+- [x] Buscar e filtrar destinos por cidade, categoria e favoritos
+- [x] Planejar um roteiro e consultar previsão do tempo
 
 **Conceitos da Aula 09 que serão utilizados:**
 
-- [ ] Estado com `useState`
-- [ ] Formulário com campos controlados
-- [ ] Evento `onChange`
-- [ ] Envio com `onSubmit`
-- [ ] `preventDefault()`
-- [ ] `useEffect`
-- [ ] Busca de dados com `fetch`
-- [ ] Tratamento de erros e carregamento
-- [ ] Navegação com React Router
-- [ ] Parâmetros de rota (se aplicável)
+- [x] Estado com `useState`
+- [x] Formulário com campos controlados
+- [x] Evento `onChange`
+- [x] Envio com `onSubmit`
+- [x] `preventDefault()`
+- [x] `useEffect`
+- [x] Busca de dados com `fetch`
+- [x] Tratamento de erros e carregamento
+- [x] Navegação com React Router
+- [x] Parâmetros de rota (aplicável)
 
 ---
 
@@ -1145,141 +1148,143 @@ As duas aulas podem ser entendidas como etapas complementares na construção da
 
 # 🛠️ Espaço para o projeto
 
-> Use esta seção para registrar a ideia, organizar as telas, planejar as funcionalidades e acompanhar a implementação.
-
 ## 1. Identificação
 
 **Nome do projeto:**  
-`[Preencha aqui]`
+`Província de São Pedro`
 
 **Integrantes:**  
-`[Preencha aqui]`
+`Ronaldo Soares`
 
 **Repositório GitHub:**  
-`[Cole o link aqui]`
+`https://github.com/ronaldorfas/projeto-react`
 
 **Link da aplicação publicada (se houver):**  
-`[Cole o link aqui]`
+`https://provincia-de-sao-pedro.vercel.app/`
 
 ## 2. Descrição
 
 **Qual problema ou necessidade a aplicação pretende atender?**
 
-> Escreva aqui.
+> Facilitar a descoberta e o planejamento de viagens por diferentes regiões do Rio Grande do Sul em uma experiência simples e organizada.
 
 **Qual é o objetivo principal?**
 
-> Escreva aqui.
+> Apresentar destinos gaúchos com informações resumidas, permitir filtros e favoritos e ajudar a montar um roteiro pessoal.
 
 **Quem utilizará a aplicação?**
 
-> Escreva aqui.
+> Pessoas interessadas em conhecer o Rio Grande do Sul, planejar passeios e explorar destinos de natureza, cultura, litoral e enogastronomia.
 
 ## 3. Funcionalidades
 
 | Funcionalidade | Descrição | Status |
 |---|---|---|
-| 1. |  | ⬜ Pendente |
-| 2. |  | ⬜ Pendente |
-| 3. |  | ⬜ Pendente |
-| 4. |  | ⬜ Pendente |
-| 5. |  | ⬜ Pendente |
+| 1. Catálogo de destinos | Exibe oito destinos gaúchos com imagem, cidade, categoria e resumo. | ✅ Concluída |
+| 2. Busca e filtros | Permite buscar por texto e filtrar por categoria ou favoritos. | ✅ Concluída |
+| 3. Favoritos | Adiciona ou remove destinos e mantém as escolhas no `localStorage`. | ✅ Concluída |
+| 4. Roteiro pessoal | Permite adicionar destinos ao roteiro, visualizar e remover itens. | ✅ Concluída |
+| 5. Detalhes e previsão | Mostra informações detalhadas por identificador e consulta o tempo por três dias na Open-Meteo. | ✅ Concluída |
 
 ## 4. Páginas e navegação
 
 | Página | URL/rota | O que será exibido |
 |---|---|---|
-| Início | `/` | |
-| Listagem | `/...` | |
-| Detalhes | `/.../:id` | |
-| Sobre | `/sobre` | |
+| Início | `/` | Apresentação, filtros e catálogo de destinos |
+| Listagem | `/destinos` | Catálogo completo com busca e filtros |
+| Detalhes | `/destinos/:id` | Informações completas e previsão do destino |
+| Sobre | `/sobre` | Informações sobre o projeto |
+| Favoritos | `/favoritos` | Destinos marcados como favoritos |
+| Roteiro | `/roteiro` | Planejador e lista de destinos selecionados |
 
 **Desenho ou rascunho da navegação:**
 
 ```text
 Início
-  ├── Listagem
-  │     └── Detalhes
+  ├── Destinos
+  │     └── Detalhes /destinos/:id
+  ├── Favoritos
+  ├── Meu roteiro
   └── Sobre
-```
 
-Adapte a estrutura conforme as páginas reais do projeto.
+URL inválida
+  └── Página não encontrada
+```
 
 ## 5. Componentes planejados
 
 | Componente | Responsabilidade | Props previstas |
 |---|---|---|
-| `Cabecalho` | | |
-| `Menu` | | |
-| `Card` | | |
-| `Lista` | | |
-| `Rodape` | | |
+| `Cabecalho` / `SiteHeader` | Exibir marca e navegação principal com contador de favoritos. | `quantidadeFavoritos` |
+| `Menu` / links de navegação | Navegar entre as páginas da aplicação. | Links e estado ativo gerados pelo React Router |
+| `Card` / `DestinationCard` | Exibir um destino e suas ações. | `destino`, `favorito`, `noRoteiro`, funções de favorito, detalhes e roteiro |
+| `Lista` / `DestinationGrid` e `ItineraryList` | Renderizar coleções de destinos ou itens do roteiro. | Destinos, favoritos, roteiro e callbacks de interação |
+| `Rodape` | Exibir identificação e contexto do projeto. | Nenhuma prop |
 
 **Outros componentes:**
 
-> Registre aqui.
+> `DestinationFilters`, `TripPlanner`, `WeatherForecast`, `DestinationCatalog`, `DestinationDetailPage`, `AboutProject` e componentes auxiliares definidos em `App.jsx`.
 
 ## 6. Dados e API
 
 **A aplicação utilizará uma API?**  
-`[ ] Sim  [ ] Não`
+`[x] Sim  [ ] Não`
 
 **Nome/serviço da API:**  
-`[Preencha aqui]`
+`Open-Meteo Forecast API`
 
 **Endpoint(s):**
 
 ```text
-GET:
-POST:
-Outros:
+GET: https://api.open-meteo.com/v1/forecast
+POST: Nenhum
+Outros: Nenhum
 ```
 
 **Quais dados serão recebidos ou enviados?**
 
-> Escreva aqui.
+> A aplicação recebe, para coordenadas aproximadas de cada destino, a temperatura máxima e mínima, o código meteorológico e a previsão dos próximos três dias. Os destinos turísticos e as preferências locais não são enviados para um servidor.
 
 **Estados que a interface deverá apresentar:**
 
-- [ ] Carregando;
-- [ ] Dados carregados;
-- [ ] Lista vazia;
-- [ ] Erro na requisição.
+- [x] Carregando;
+- [x] Dados carregados;
+- [x] Lista vazia;
+- [x] Erro na requisição.
 
 ## 7. Formulários
 
 **Qual formulário será implementado?**
 
-> Escreva aqui.
+> O formulário de planejamento de viagem da página “Meu roteiro”.
 
 **Campos:**
 
 | Campo | Tipo | Obrigatório? | Validação/observação |
 |---|---|---|---|
-| | | | |
-| | | | |
-| | | | |
+| Cidade de partida | `text` | Sim | Deve possuir texto; limite de 60 caracteres |
+| Duração da viagem | `number` | Sim | Valor inteiro entre 1 e a quantidade de destinos |
+| Interesse | `select` | Não | Categoria entre Natureza, Cultura, Litoral, Enogastronomia ou Todas |
 
 **O que deve acontecer após o envio?**
 
-> Escreva aqui.
+> `preventDefault()` impede o recarregamento. Os dados são validados e são geradas sugestões filtradas por interesse e limitadas pela duração informada. Cada sugestão pode ser adicionada ao roteiro.
 
 ## 8. Organização dos arquivos
-
-Rascunho de estrutura (adapte à organização escolhida):
 
 ```text
 src/
 ├── components/
-│   ├── Cabecalho.jsx
-│   ├── Card.jsx
-│   └── Rodape.jsx
-├── pages/
-│   ├── Inicio.jsx
-│   ├── Listagem.jsx
-│   └── Sobre.jsx
+│   ├── DestinationCard.jsx
+│   ├── DestinationFilters.jsx
+│   ├── SiteHeader.jsx
+│   ├── TripPlanner.jsx
+│   └── WeatherForecast.jsx
+├── data/
+│   └── atracoes.js
 ├── App.jsx
-└── main.jsx
+├── main.jsx
+└── styles.css
 ```
 
 ## 9. Diário de desenvolvimento
@@ -1287,59 +1292,71 @@ src/
 ### Etapa 1 — Planejamento
 **O que foi feito?**
 
-> 
+> Foram definidos o tema turístico, o público, as páginas e as funcionalidades de busca, favoritos, roteiro e detalhes.
 
 **Dúvidas ou dificuldades:**
 
-> 
+> Definir quais informações seriam demonstrativas e quais dependeriam de serviços externos.
 
 ### Etapa 2 — Estrutura e componentes
 **O que foi feito?**
 
-> 
+> A interface foi dividida em componentes reutilizáveis e os dados dos destinos foram separados em `atracoes.js`.
 
 **Dúvidas ou dificuldades:**
 
-> 
+> Organizar as responsabilidades entre `App`, a grade de destinos e os componentes menores.
 
 ### Etapa 3 — Estado e formulários
 **O que foi feito?**
 
-> 
+> Foi implementado estado para busca, categorias, favoritos, roteiro e campos controlados do planejador.
 
 **Dúvidas ou dificuldades:**
 
-> 
+> Validar a duração e evitar destinos duplicados no roteiro.
 
 ### Etapa 4 — API e navegação
 **O que foi feito?**
 
-> 
+> Foram configuradas rotas com React Router, parâmetros de detalhes e consulta à API Open-Meteo com estados de carregamento e erro.
 
 **Dúvidas ou dificuldades:**
 
-> 
+> Validar respostas da API e cancelar requisições ao sair da página.
 
 ### Etapa 5 — Testes e finalização
 **O que foi feito?**
 
-> 
+> Foram realizadas validação de build e ajustes de navegação, persistência, estados vazios e tratamento de erros.
 
 **Dúvidas ou dificuldades:**
 
-> 
+> Automatizar testes; a configuração atual não inclui uma suíte de testes.
 
 ## 10. Espaço livre para código e observações
 
 ```jsx
-// Cole aqui trechos importantes ou exemplos do projeto.
+// Exemplo: filtro combinado por texto, categoria e favoritos
+const destinosFiltrados = atracoes.filter((destino) => {
+  const correspondeBusca = destino.nome
+    .toLocaleLowerCase("pt-BR")
+    .includes(busca.trim().toLocaleLowerCase("pt-BR"));
+
+  const correspondeCategoria =
+    categoriaSelecionada === "Todas" ||
+    destino.categoria === categoriaSelecionada;
+
+  const correspondeFavoritos =
+    !somenteFavoritos || favoritos.includes(destino.id);
+
+  return correspondeBusca && correspondeCategoria && correspondeFavoritos;
+});
 ```
 
 **Anotações:**
 
-> 
-
----
+> Os dados de previsão são informativos e dependem da conexão com a internet. Favoritos e roteiro são persistidos apenas no navegador por meio de `localStorage`.
 
 # ✅ Checklist de desenvolvimento
 
@@ -1390,26 +1407,6 @@ Links indicados nos materiais das aulas:
 | Revisão JavaScript (Aula 08) | https://github.com/deivisontakatu/aula-javascript |
 | Atividade de revisão | https://wayground.com/ |
 | Documentação React (exemplo citado na aula) | https://react.dev |
-
----
-
-# 📝 Anotações pessoais
-
-## O que aprendi na Aula 08?
-
-> 
-
-## O que aprendi na Aula 09?
-
-> 
-
-## Quais conceitos preciso revisar?
-
-> 
-
-## Quais dúvidas quero levar para a próxima aula?
-
-> 
 
 ---
 

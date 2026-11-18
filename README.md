@@ -654,7 +654,7 @@ Desenvolver uma aplicação React que utilize os conceitos estudados na aula:
 
 **Ideia da aplicação:**
 
-> Escreva aqui a ideia escolhida.
+(https://github.com/ronaldorfas/projeto-react)
 
 **Funcionalidades planejadas:**
 
